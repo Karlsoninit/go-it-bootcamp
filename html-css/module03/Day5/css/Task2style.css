@@ -1,0 +1,129 @@
+.block {
+    width: 200px;
+    height: 40px;
+    border: 2px solid blue;
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 5px;
+    color: blue;
+    border-radius: 4px;
+}
+
+.block:hover {
+    color: red;
+}
+
+.block1 {
+    width: 200px;
+    height: 40px;
+    border: 2px solid blue;
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 5px;
+    color: blue;
+    border-radius: 4px;
+    background-color: #4c545e;
+}
+
+.block1:hover {
+    background-color: red;
+}
+
+.items3 {
+    width: 600px;
+    height: 30px;
+    background-color: orange;
+
+}
+.block2 {
+    float: left;
+    color: white;
+    margin-left: 20px;
+    list-style: none;
+    line-height: 30px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.block2:hover {
+    background-color: red;
+}
+
+.text {
+    width: 600px;
+}
+.title:first-letter {
+    color: red;
+    font-size: 30px;
+}
+.text1 {
+    width: 600px;
+}
+.title1:first-line {
+    color: red;
+}
+
+.title2::selection{
+    color: red;
+    background-color: blue;
+}
+
+.type1, .type2, .type3 {
+    display: block;
+    margin: 0 auto 5px;
+
+}
+.type1:focus {
+    background-color: black;
+}
+
+.type2:focus {
+    color: green;
+}
+
+.type3:focus {
+    width: 400px;
+}
+
+.type5:focus {
+    border: 3px solid orange;
+    color: orange;
+    outline: none;
+}
+
+.type4, .type5, .type6{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.title3:before {
+    content:"Начало:" ;
+    color: red;
+}
+
+.title3:after {
+    content: ":Конец!";
+    color: green;
+}
+
+.desc:nth-child(3n){
+    color: red;
+}
+
+.desc3:nth-child(2n) {
+    color: green;
+}
+
+.desc3:nth-child(2n+1) {
+    color: red;
+}
+
+.desc4:nth-child(3) {
+    color: red;
+}
