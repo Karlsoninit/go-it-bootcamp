@@ -7,8 +7,7 @@
 
 .wrapper {
     background-color: #263555;
-    width: 1280px;
-    height: 1295px;
+
 }
 
 .container {
@@ -21,6 +20,7 @@
     width: 1000px;
     height: 1179px;
     background-color: rgba(87, 103, 127, 0.5);
+    padding: 15px 10px;
 
 }
 
@@ -52,6 +52,7 @@
 .type > a{
     text-decoration: none;
     color: red;
+    display: block;
 
 }
 
@@ -60,7 +61,7 @@
 
 }
 
-img {
+.img {
 
     display: inline-block;
     /*margin: 15px 0 0 40px;*/
@@ -79,7 +80,7 @@ img {
     height: 337px;
     background-color: #373e47;
     border-radius: 3px;
-    margin: 15px 0 0 10px;
+
 }
 
 .sidebar-item2 {
@@ -91,7 +92,6 @@ img {
     font-size: 12px;
     line-height: 20px;
     text-align: left;
-    margin: 20px 0 0 10px;
     border-radius: 3px;
     padding: 15px;
 
@@ -153,7 +153,7 @@ img {
 .content {
     display: inline-block;
     vertical-align: top;
-    width: 760px;
+    width: 740px;
     height: 1179px;
     padding: 15px;
 
@@ -205,7 +205,6 @@ img {
 }
 
 .item {
-    margin-top: 30px;
     color: #ffffff;
     font-size: 16px;
     line-height: 18px;
@@ -219,7 +218,7 @@ img {
     height: 183px;
     border: 10px solid #697689;
     background-color: white;
-    margin-right: 17px;
+    margin-right: 11px;
 
 }
 
@@ -236,11 +235,11 @@ img {
 }
 
 .text {
-    margin: 20px 0 20px 0px;
+    margin-bottom: 20px;
 }
 
 .link {
-    margin: 0 0 15px 30px;
+    margin: 0 0 15px 20px;
     color:  #ffffff;
     font-size: 14px;
     line-height: 20px;
@@ -249,9 +248,43 @@ img {
 }
 
 .list {
-    margin-left: 30px;
+    margin: 0 40px 0 20px;
     color:  #e4e4e4;
     font-size: 13px;
     line-height: 20px;
     text-align: justify;
+}
+
+.item3 {
+    list-style: none;
+}
+
+.title-in {
+    margin: 20px 0 20px;
+}
+
+.table-main {
+    background-color:black ;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #4c545e;
+    color:  #ffffff;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.table-td {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #4c545e;
+    color:  #ffffff;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: justify;
+    background-color: gray;
+}
+
+.photo:last-child {
+    margin-right: 0;
 }
