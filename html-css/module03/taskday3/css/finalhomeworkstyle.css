@@ -21,6 +21,7 @@ body{
     padding: 20px 40px;
 }
 .img-top{
+    width: 300px;
     display: block;
     margin-top: 30px;
 
