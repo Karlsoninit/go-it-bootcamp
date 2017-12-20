@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper{
+    background-image: url("page-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 100px;
+
+
+}
+
+.content{
+    width: 490px;
+    background-color:white ;
+    margin: auto;
+    padding: 60px 37px 44px;
+    font-family: Arial , sans-serif;
+}
+
+.title {
+    font-family: 'Bungee', cursive;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 27px;
+}
+
+.picture {
+    display: block;
+    margin: 0 auto 27px;
+}
+
+.sub-title  {
+    font-size: 14px;
+    color: blue;
+    line-height: 19px;
+    margin-bottom: 22px;
+
+}
+
+.text{
+    color: darkgrey;
+
+
+}
+
+.article{
+    margin-bottom:20px;
+}
+
+ul{
+    list-style: none;
+}
+
+.list-article-item{
+    margin-bottom: 25px;
+}
+
+.list-article-item:last-child{
+    margin-bottom: 0;
+}
+
+.article-second{
+    border-bottom: 1px solid red;
+    padding-bottom: 52px;
+}
+
+
+.sub-title-mod {
+    margin-bottom: 16px;
+}
+
+.list-item {
+    color: #263555;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 18px;
+}
+
+.list {
+    display: inline-block;
+    margin: 25px;
+    vertical-align: top;
+
+}
+
+list:last-child{
+    margin-left: 50px;
+
+}
+
+.article-text {
+    margin-bottom: 37px;
+}
+
+.article:last-child {
+    margin-bottom: 0;
+}
+
+.title {
+    margin-top: 20px;
+}
