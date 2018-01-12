@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-image: url("../1 (1).jpg");
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+.bg-005_plane {
+    width: 32px; height: 32px;
+    background: url('../css_sprites (1).png') -10px -10px;
+}
+
+.container {
+    width: 500px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+}
+
+.type-one {
+    width: 140px;
+    height: 70px;
+    background-color: rgba(0,0,0,0.3);
+    outline: none;
+    border: none;
+}
+.type-one:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+.form-left {
+    margin: 15px 0 0 15px;
+}
+
+.form-right {
+    margin: 25px 0 0 20px;
+    outline: none;
+    border: none;
+}
+
+.col-1, .col-2 {
+    width: 290px;
+    height: 25px;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+
+}
+
+.col-3, .col-4, .col-5, .col-6 {
+    width: 300px;
+    height: 25px;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+
+}
+
+.col-7 {
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+    outline: none;
+    background-color: orange;
+    color: white;
+}
+
+/*.bg-005_plane {*/
+    /*width: 32px; height: 32px;*/
+    /*background: url('../css_sprites.png') -10px -10px;*/
+/*}*/
+

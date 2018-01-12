@@ -1,0 +1,109 @@
+// colors
+$white: #fff;
+$title: #000;
+$button: #ff6b08;
+$main-text: #6b6f7a;
+$dark-blue:#1b4371;
+$grey-second: #202020;
+$checkbox: #17ecff;
+$footer-text: #a2a2a2;
+$footer-link: #65666a;
+$background-word:rgba(0, 0, 0, .05);
+
+@function rem($pix) {
+    @return ($pix/16)+rem;
+}
+
+@font-face {
+    font-family: "AcromBold";
+    src: url("../fonts/Acrom W00 Bold.otf");
+}
+@font-face {
+    font-family: "AcromExtrabold";
+    src: url("../fonts/Acrom W00 ExtraBold.otf");
+}
+@font-face {
+    font-family: "HammersmithOne";
+    src: url("../fonts/Acrom W00 Medium.otf");
+}
+@font-face {
+    font-family: "Acrom";
+    src: url("../fonts/Acrom W00 Regular.otf");
+}
+@font-face {
+    font-family: "HammersmithOne";
+    src: url("../fonts/Light.otf");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title-main {
+    font-family: "AcromExtrabold" ,sans-serif;
+        font-size: rem(100);
+        text-transform: uppercase;
+        line-height: rem(100);
+        color: $title;
+}
+
+.sub-title {
+    font-family: "AcromExtrabold" ,sans-serif;
+    font-size: rem(48);
+    text-transform: uppercase;
+    line-height: rem(60);
+    color: $title;
+}
+
+.title-third {
+    font-family: "AcromExtrabold" ,sans-serif;
+    font-size: rem(24);
+    text-transform: uppercase;
+    line-height: rem(30);
+    color: $title;
+}
+
+.text-bold {
+    font-family: "AcromBold" ,sans-serif;
+    font-size: rem(16);
+    text-transform: uppercase;
+    line-height: rem(24);
+    color: $title;
+}
+
+.text {
+    font-family: "Acrom" ,sans-serif;
+    font-size: rem(16);
+    text-transform: uppercase;
+    line-height: rem(24);
+    color: $main-text;
+}
+.text-small {
+    font-family: "Acrom" ,sans-serif;
+    font-size: rem(14);
+    text-transform: uppercase;
+    line-height: rem(21);
+    color: $main-text;
+}
+
+.button {
+    padding: rem(21) rem(24);
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: rem(1);
+    background-color: $button;
+    display: block;
+}
+
+.button:hover {
+    box-shadow: 0px 8px 43px 0px rgba(255, 107, 8, 0.59);
+}
+
+.button-small {
+    background-color: $button;
+    display: block;
+    width: rem(26);
+    height: rem(26);
+}
+

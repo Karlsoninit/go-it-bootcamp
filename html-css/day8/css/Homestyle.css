@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.section-top {
+    width: 940px;
+    margin: auto;
+}
+.menu {
+    margin: 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    width: 550px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.page {
+    display: block;
+    text-align: center;
+}
+/*.aside {*/
+/*flex-grow: 1*/
+/*}*/
+.photo {
+    margin-left: 30px;
+}
+.Menu-top {
+    font-family: Bebas;
+    color:  #a5a5a5;
+    font-size: 12px;
+    line-height: 21px;
+    display: block;
+}
+
+.menu-bottom {
+    font-family: Bebas;
+    color: black;
+    font-size: 20px;
+    line-height: 21px;
+    display: block;
+}
+
+.artboard {
+    /*align-items: flex-end;*/
+    display: flex;
+    background-image: url("../img@1X.png");
+    width: 940px;
+    height: 435px;
+
+
+}
+
+.photoin {
+    width: 217px;
+    height: 72px;
+    background-color: gray;
+    align-self: flex-end;
+}
+
+.text-bottum {
+    width: 940px;
+    height: 95px;
+    background-color: #f5f5f5;
+}
+h3 {
+    margin: 0 0 16px 17px;
+}
+
+.desc-bottum {
+    margin: 0 56px 19px 17px;
+}
+
+.conteiner {
+    display: flex;
+    margin-top: 70px;
+}
+
+.list {
+    display: flex;
+}
+
+.box1, .box2, .box3 {
+    flex: 1;
+    width: 290px;
+}
+
+.desc::before {
+    content: url("../more icon@1X (1).png");
+    margin-right: 20px;
+}
+.list::before  {
+    content: url("../magnify glass@1X.png");
+    margin-left: 10px;
+
+}
+
+h4 {
+    margin-left: 20px;
+}
+.list {
+    font-family: ﻿Bebas;
+    font-size: 20px;
+    color: rgba(70, 70, 70, 255);
+    text-align: left;
+}
+.in {
+    margin: 20px 0 20px 0;
+}
+
+.desc {
+    display: flex;
+    margin-right: 20px;
+    font-size: 12px;
+    color: rgba(71, 71, 71, 255);
+    text-align: left;
+}
+
+.section-bottum {
+    display: flex;
+    width: 940px;
+height: 100px}
+
+
+.header {
+    display: flex;
+    background-color: gray;
+    align-self: center;
+}
+
+.header-text{
+margin: auto}
