@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route, Switch, Redirect}
 import News from "./components/News";
 import CrossFit from "./components/CrossFit";
 import Training from "./components/training";
-import Login, {Logout, Signup} from "./components/Login";
+import Login, {Logout, Signup,Choice} from "./components/Login";
+import Coach from '../src/components/Coach/index'
 import SelectTrainer from './components/training/SelectTrainer';
 import {getLogged, excludeProp} from "./utils";
 import Container from './components/Container';
@@ -49,8 +50,13 @@ class App extends Component {
 
                         <Route path="/signup" component={Signup} />
 
+                        <Route path="/choice" component={Choice} />
+
+                        <Route path="/coach" component={Coach} />
+
                         {/* Закрытые роуты */}
                         <PrivateRoute path="/home" component={SelectTrainer} title="Some Page"/>
+
                         <Redirect to="/login"/>
                     </Switch>
                 </div>

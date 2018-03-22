@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import Button from "./general/Button";
+import {Header, Arrow, Title, CloseIcon} from "./ui";
 import styled from 'styled-components';
 import RenderIf from './general/RenderIf'
 
@@ -22,6 +22,13 @@ const Burger = styled.div`
         transform: translate(0, -50%);
     }
 `;
+
+
+
+const MenuWrapper = styled.div`
+
+`
+
 // Компонент который рисует меню
 class Menu extends Component {
     state ={
@@ -32,12 +39,18 @@ class Menu extends Component {
         return (
             <div>
                 <RenderIf condition={this.state.visible}>
-                    <div>
+                    <MenuWrapper>
+                        <Header>
+                            <CloseIcon/>
+                            <Title>
+                                menu
+                            </Title>
+                        </Header>
                         <NavLink to="/home/">home</NavLink>
                         <NavLink to="/daily/">daily</NavLink>
                         <NavLink to="/statistics/">statistics</NavLink>
-                        <Link to="/logout/"><Button>logout</Button></Link>
-                    </div>
+                        <Link to="/logout/">logout</Link>
+                    </MenuWrapper>
                 </RenderIf>
                 <RenderIf condition ={!this.state.visible}>
                     <Burger />
@@ -48,39 +61,21 @@ class Menu extends Component {
     }
 };
 
-const Title = styled.h4`
-
-`
 
 
 
-const Wrapper = styled.div`
+
+export const Wrapper = styled.div`
         background-color: #dedede;
         height: 100vh;
         font-family: Montserrat, sans-serif;
         padding: 30px 20px;
 `
-const Header = styled.header`
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-`
-
-const Arrow = styled.div`
-        transform: rotate(-45deg);
-        border: 4px solid #333;
-        width: 12px;
-        height: 12px;
-        border-right: none;
-        border-bottom: none;
-        box-sizing: border-box;
-
- `
 
 
 // Обертка для компонентов в которых нужно меню
 const Container = (Component, title) => {
-    let WrappedComponent = () => {
+    let WrappedComponent = (props) => {
         return (
             <Wrapper>
                 <Header>
@@ -90,11 +85,10 @@ const Container = (Component, title) => {
                     </Title>
                     <Menu/>
                 </Header>
-                <Component />
+                <Component {...props} />
             </Wrapper>
         )
     };
-
     // Должны вернуть функцию, чтобы можно было передать в
     // Route -> component
     return WrappedComponent;

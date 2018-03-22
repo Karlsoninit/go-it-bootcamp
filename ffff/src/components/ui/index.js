@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {excludeProp} from "../../utils";
+import {withRouter} from "react-router-dom";
 
 export const Button = styled.button`
     background-image: -moz-linear-gradient( -10deg, rgb(222,255,201) 0%, rgb(163,248,255) 100%);
@@ -17,15 +18,22 @@ export const Button = styled.button`
     letter-spacing: 0.14em;
 `;
 
+export const Icon = styled.img`
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    padding: 0;
+`;
+
 const InputWrapper = styled.div`
     margin-bottom: 5px;
     width: 100%;
     height: 60px;
     max-width: 480px;
     background-color: #ffffff;
-    font-family: Chivo;
+    font-family: Chivo, sans-serif;
     display: flex;
-    &::before{
+    &::before {
       width: 60px;
       content: '';
       background-image: url(${props => props.image ? props.image : ''});
@@ -43,7 +51,7 @@ const Input = styled.input`
       outline: none;
     }
     &::placeholder{
-      color: #333;
+      color: #333
       opacity: 1;
     }
 `;
@@ -57,10 +65,50 @@ export const TextInput = (props) => {
 
 export const ErrorMessage = styled.div`
     display: ${props => props.visible ? 'block' : 'none'}
-    background-color: #fff;
-    text-align: center;
+    background-color: #fff
+    text-align: center
     font-family:Chivo;
     font-weight: bold;
     color: #f00;
     text-transform:uppercase;
 `;
+
+export const Title = styled.h4`
+    margin: 0 auto;
+`
+export const Header = styled.header`
+        display: flex;
+        margin-bottom: 20px;
+`
+
+export const Arrow = styled.div`
+        transform: rotate(-45deg);
+        border: 4px solid ${props => props.theme === 'light'? '#fff' : '#000'};
+        width: 12px;
+        height: 12px;
+        border-right: none;
+        border-bottom: none;
+        box-sizing: border-box;
+
+ `
+ const BackArrowLocal = (props) =>  {
+    return <Arrow {...props} onClick={props.history.goBack} />
+}
+
+const defaultSize = 20;
+const diagonal = (size = defaultSize) => {
+    return size*Math.sqrt(2)
+}
+
+export const CloseIcon = styled.div`
+        width: ${props => props.size ? props.size : defaultSize}px;
+        height: ${props => props.size ? props.size : defaultSize}px;
+        &::before, &::after {
+        height: 2px;
+        content: "";
+        width: ${props => props.size ? diagonal(props.size) : diagonal(defaultSize)}px;
+        }
+     
+`
+
+export const BackArrow = withRouter(BackArrowLocal);

@@ -4,27 +4,6 @@ import {} from "../ui";
 import Select from "../Login/index";
 import {ButtonStart} from '../Login/index'
 
-const TrainerList = [{
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
-        name: "Alfred",
-        info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
-    },
-    {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
-        name: "liza",
-        info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
-    },
-    {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Vw6Oc4ffsuoAmbdMrEA2s1oXpaKjlHrNbT1uhqWJn9DvxgR7fw",
-        name: "Bob",
-        info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
-    },
-    {
-        image: "https://www.telegraph.co.uk/content/dam/men/2016/04/22/PD68583783_dtho201_2655530b-xlarge_trans_NvBQzQNjv4BqpJliwavx4coWFCaEkEsb3kvxIt-lGGWCWqwLa_RXJU8.jpg",
-        name: "Jack",
-        info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
-    }]
-
 
 const Container = styled.div`
     text-align: center;
@@ -33,7 +12,6 @@ const Container = styled.div`
     background-image: -webkit-linear-gradient( -10deg, rgb(222,255,201) 0%, rgb(163,248,255) 100%);
     background-image: -ms-linear-gradient( -10deg, rgb(222,255,201) 0%, rgb(163,248,255) 100%);
     
-
 `
 
 const Choice = styled.input`
@@ -77,66 +55,90 @@ const ListInfo = styled.div`
     
 `
 
-
-class SelectTrainer extends Component {
+class Coach extends Component {
 
     state = {
-        trainers: ['Alfred', 'Ben', 'Jack', 'Sasha', 'Fiona', 'Shreck', "Frenk", "Vova", "Irina", "Julia" ],
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Vw6Oc4ffsuoAmbdMrEA2s1oXpaKjlHrNbT1uhqWJn9DvxgR7fw",
-        search: ""
+        trainers: [{
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
+            name: "Alfred",
+            info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+        },
+            {
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
+                name: "liza",
+                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+            },
+            {
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Vw6Oc4ffsuoAmbdMrEA2s1oXpaKjlHrNbT1uhqWJn9DvxgR7fw",
+                name: "Bob",
+                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+            },
+            {
+                image: "https://www.telegraph.co.uk/content/dam/men/2016/04/22/PD68583783_dtho201_2655530b-xlarge_trans_NvBQzQNjv4BqpJliwavx4coWFCaEkEsb3kvxIt-lGGWCWqwLa_RXJU8.jpg",
+                name: "Jack",
+                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+        }],
+        image: "",
+        search: "",
+
 
     }
 
     SearchTrainer = (e) => {
-         this.setState({
-             search: e.target.value
+        this.setState({
+            search: e.target.value
         })
     }
 
-    onLogin = () => {
-        return alert('dfdfdfd')
+    onChange = () => {
+       let filter = this.state.trainers.name.filter(
+           (trainer) => {
+               return trainer.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+           }
+       )
+        this.setState({
+            name:filter
+        })
     }
 
     render(){
 
-        let filter = this.state.trainers.filter(
-             (trainer) => {
-                 return trainer.toLowerCase()
-                     .indexOf(this.state.search.toLowerCase()) !== -1;
-             }
-         )
+        // let filter = this.state.trainers.filter(
+        //     (trainer) => {
+        //         return trainer.toLowerCase()
+        //             .indexOf(this.state.search.toLowerCase()) !== -1;
+        //     }
+        // )
 
         return(
             <Container>
-
                 <Choice placeholder="Choice"
                         type="text"
                         value={this.state.search}
                         onChange={this.SearchTrainer}
                 />
-                    <div>
-                        {filter.map((trainer) => {
-                         return(
-                             <ListContainer onClick={this.onLogin}>
-                                 <Image className="Trainer__photo" src={this.state.image} onClick={this.Choice} />
-                                 <ListInfo>{trainer}</ListInfo>
-                             </ListContainer>
+                <div>
+                    {this.state.trainers.map((trainer) => {
+                        return(
+                            <ListContainer onClick={this.onLogin}>
+                                <Image className="Trainer__photo" src={trainer.image} onClick={this.Choice} />
+                                <ListInfo>{trainer.name}</ListInfo>
+                            </ListContainer>
 
-                         )
-                     })}
-                    </div>
+                        )
+                    })}
+                </div>
                 <ButtonStart type="button"
                              onClick={this.onLogin}>
                     get started
                 </ButtonStart>
             </Container>
-
         )
     }
 }
 
 
-export default SelectTrainer
+export default Coach
 
 
 
