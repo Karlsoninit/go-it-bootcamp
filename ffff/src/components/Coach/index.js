@@ -47,69 +47,61 @@ const Image = styled.img`
 const ListInfo = styled.div`
     width: 160px;
     height: 70px;
-    //border: 1px solid red;
+    border: 1px solid red;
     margin: auto ;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 70px;
 
     
+`
+
+const TrainerInfo = styled.div`
+    width: 160px;
+    height: 40px;
+    border: 1px solid red;
 `
 
 class Coach extends Component {
 
     state = {
         trainers: [{
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
-            name: "Alfred",
-            info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
-        },
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
+                name: "Alfred",
+                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?"
+            },
             {
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWi9rVW8MaE0wJ1NR_ithLuY7WmbOabFVrnuu76cXT4LkhhE9",
                 name: "liza",
-                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+                info: "Lorem ipsum dolor sit amet, consectetur ?"
             },
             {
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Vw6Oc4ffsuoAmbdMrEA2s1oXpaKjlHrNbT1uhqWJn9DvxgR7fw",
                 name: "Bob",
-                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+                info: "Lorem ipsum dolor sit amet quas?"
             },
             {
                 image: "https://www.telegraph.co.uk/content/dam/men/2016/04/22/PD68583783_dtho201_2655530b-xlarge_trans_NvBQzQNjv4BqpJliwavx4coWFCaEkEsb3kvxIt-lGGWCWqwLa_RXJU8.jpg",
                 name: "Jack",
-                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus fugiat incidunt necessitatibus optio quas?"
+                info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?"
         }],
-        image: "",
         search: "",
 
 
     }
 
     SearchTrainer = (e) => {
-        this.setState({
-            search: e.target.value
-        })
-    }
-
-    onChange = () => {
-       let filter = this.state.trainers.name.filter(
-           (trainer) => {
-               return trainer.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
-           }
-       )
-        this.setState({
-            name:filter
+        let value = e.target.value;
+        this.setState((prevState) => {
+            return {
+                search: value,
+                trainers: prevState.trainers.filter((trainer) => {
+                    return trainer.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+                })
+            }
         })
     }
 
     render(){
-
-        // let filter = this.state.trainers.filter(
-        //     (trainer) => {
-        //         return trainer.toLowerCase()
-        //             .indexOf(this.state.search.toLowerCase()) !== -1;
-        //     }
-        // )
-
         return(
             <Container>
                 <Choice placeholder="Choice"
@@ -122,7 +114,13 @@ class Coach extends Component {
                         return(
                             <ListContainer onClick={this.onLogin}>
                                 <Image className="Trainer__photo" src={trainer.image} onClick={this.Choice} />
-                                <ListInfo>{trainer.name}</ListInfo>
+                                <div>
+                                    <ListInfo>{trainer.name}</ListInfo>
+                                    <TrainerInfo>
+                                        {trainer.info}
+                                    </TrainerInfo>
+                                </div>
+
                             </ListContainer>
 
                         )
@@ -158,46 +156,3 @@ export default Coach
 
 
 
-// class SelectTrainer extends Component {
-//
-//     state = {
-//         trainers: ["iron man", "Hulk", "Tor"],
-//         search:""
-//     }
-//
-//     SearchTrainer = (e) => {
-//         this.setState({
-//             search: e.target.value
-//         })
-//     }
-//
-//
-//
-//     render(){
-//
-//         let filter = this.state.trainers.filter(
-//             (trainer) => {
-//                 return trainer.toLowerCase()
-//                     .indexOf(this.state.search.toLowerCase()) !== -1;
-//             }
-//         )
-//
-//         return(
-//             <div>
-//                 <input type="text"
-//                        value={this.state.search}
-//                        onChange={this.SearchTrainer}
-//                 >
-//                 </input>
-//                 <div>
-//                     {filter.map((trainer) => {
-//                         return<ul key={trainer}>
-//                             <list>{trainer}</list>
-//                         </ul>
-//                     })}
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-// export default SelectTrainer

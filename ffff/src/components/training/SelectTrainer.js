@@ -103,7 +103,9 @@ class SelectTrainer extends Component {
              (trainer) => {
                  return trainer.toLowerCase()
                      .indexOf(this.state.search.toLowerCase()) !== -1;
+
              }
+
          )
 
         return(
